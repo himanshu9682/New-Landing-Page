@@ -26,14 +26,14 @@
         <span class="brand-sub">Empowering Tech Careers</span>
       </a>
       <div class="nav-title">Advanced AI &amp; Machine Learning Program</div>
-      <button class="btn btn-outline nav-cta" type="button">Sign Up / Login</button>
+      <a href="#registerForm"><button class="btn btn-outline nav-cta" type="button">Register Now</button></a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-<!-- Hero -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-glow"></div>
     <svg class="hero-curves" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
@@ -118,11 +118,13 @@
           <span class="colon">:</span>
           <div class="time-unit glass"><span class="value" id="cd-hours">02</span><span class="label">Hours</span></div>
           <span class="colon">:</span>
-          <div class="time-unit glass"><span class="value" id="cd-minutes">02</span><span class="label">Minutes</span></div>
+          <div class="time-unit glass"><span class="value" id="cd-minutes">02</span><span class="label">Minutes</span>
+          </div>
           <span class="colon">:</span>
-          <div class="time-unit glass"><span class="value" id="cd-seconds">02</span><span class="label">Seconds</span></div>
+          <div class="time-unit glass"><span class="value" id="cd-seconds">02</span><span class="label">Seconds</span>
+          </div>
         </div>
-        <button class="cta-button" data-scroll-to="registerForm">Join The Free Masterclass</button>
+        <button class="cta-button" data-scroll-to="registerForm">Join the Masterclass</button>
       </div>
     </div>
   </section>
@@ -135,7 +137,7 @@
         <p class="risk-sub">Pay Only If You Find Value!</p>
         <p class="risk-desc">We're Making This Risk-Free for You: <strong>Learn First, Pay Later</strong> - Only If You
           Think It's Worth It!</p>
-        <button class="btn btn-yellow" data-scroll-to="registerForm">Register for Free <i
+        <button class="btn btn-yellow" data-scroll-to="registerForm">Register Now! <i
             class="fa-solid fa-arrow-right"></i></button>
       </div>
       <div class="risk-steps">
@@ -306,11 +308,6 @@
     <aside class="body-side">
       <form class="register-card" id="registerForm" novalidate>
         <h3>Register for this Masterclass</h3>
-        <div class="form-risk-note">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>Free to attend &mdash; pay <strong>₹1,999</strong> only if you find it valuable!</span>
-        </div>
-
         <div class="field">
           <label for="fullName">Full Name *</label>
           <input id="fullName" name="fullName" type="text" required />
@@ -323,40 +320,18 @@
           <label for="phone">Phone Number *</label>
           <div class="phone-row">
             <select aria-label="Country code">
-              <option value="+1">+1</option>
               <option value="+91">+91</option>
-              <option value="+44">+44</option>
             </select>
             <input id="phone" name="phone" type="tel" required />
           </div>
           <small>OTP will be sent to this number for verification</small>
-        </div>
-        <div class="field">
-          <label for="gradYear">Graduation Year *</label>
-          <select id="gradYear" required>
-            <option value="">Select</option>
-            <option>2028</option>
-            <option>2027</option>
-            <option>2026</option>
-            <option>2025</option>
-            <option>2024</option>
-            <option>2023</option>
-            <option>2022</option>
-            <option>2021</option>
-            <option>2020</option>
-          </select>
         </div>
         <label class="checkbox">
           <input type="checkbox" required />
           <span>I agree to the <a href="#">Terms of Use</a>, <a href="#">Privacy Policy</a>, <a href="#">Cookie
               usage</a> and all applicable laws and regulations.</span>
         </label>
-        <label class="checkbox">
-          <input type="checkbox" />
-          <span>I agree to receive the OTPs &amp; updates via text SMS and WhatsApp</span>
-        </label>
-        <button type="submit" class="btn btn-primary btn-block">SIGN UP</button>
-        <p class="signin-link">Already a member? <a href="#">LOG IN</a></p>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
       </form>
     </aside>
   </section>
