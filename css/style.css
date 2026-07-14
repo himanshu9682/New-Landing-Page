@@ -133,74 +133,208 @@ ul {
 /* =========================================
    Navbar
 ========================================= */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+
+
+.site-header {
   background: #fff;
-  border-bottom: 1px solid var(--border);
-  transition: transform .3s ease, box-shadow .2s ease;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar.hide {
-  transform: translateY(-100%);
-}
-
-.navbar.scrolled {
-  box-shadow: var(--shadow-sm);
-}
-
-.nav-inner {
+.header-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  height: 70px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.brand {
+.logo-cluster {
   display: flex;
-  flex-direction: column;
-  line-height: 1;
+  align-items: center;
+  gap: 16px;
 }
 
-.brand-logo {
-  font-weight: 900;
-  font-size: 16px;
-  color: var(--blue-600);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #1e40af;
+  display: grid;
+  place-items: center;
+  color: #1e40af;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.logo-text .brand {
+  color: #1e40af;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.logo-text .tag {
+  color: #6b7280;
+  font-size: 8px;
+  text-transform: uppercase;
   letter-spacing: .5px;
 }
 
-.brand-sub {
-  font-size: 10px;
-  color: var(--muted);
-  font-weight: 500;
-  margin-top: 2px;
-}
-
-.nav-title {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 15px;
-  flex: 1;
-}
-
-.nav-cta {
-  margin-left: auto;
-}
-
-.hamburger {
-  display: none;
+.forbes {
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
-  padding: 8px;
+  position: relative;
 }
 
-.hamburger span {
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: .2s;
+.visionary {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 5px;
+  background: #33629A;
+  text-wrap: nowrap;
+  color: #FFF;
+  font-family: auto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rank {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 5px;
+  background: #FDA31B;
+  animation: rankBlink 1.2s infinite;
+  text-wrap: nowrap;
+  color: #fff;
+  font-family: auto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  position: absolute;
+  bottom: 30px;
+  right: -50px;
+}
+
+@keyframes rankBlink {
+
+  0% {
+    background-color: #ffc107;
+    color: #ffffff;
+  }
+
+  50% {
+    background-color: #26296b;
+  }
+
+  100% {
+    background-color: #ffc107;
+    color: #ffffff;
+  }
+}
+
+
+
+.login-btn {
+  background: #f5a623;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background .2s;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+#programsBtn {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#programsBtn:hover {
+  color: var(--blue-600);
+}
+
+.login-btn:hover {
+  background: #e69512;
+}
+
+.login-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}
+
+.programs-wrap {
+  position: relative;
+}
+
+.programs-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .08);
+  min-width: 240px;
+  padding: 8px;
+  display: none;
+  z-index: 200;
+}
+
+.programs-dropdown a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.programs-dropdown a:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+}
+
+.programs-wrap.open .programs-dropdown {
+  display: block;
+}
+
+@media (max-width: 960px) {
+
+  .forbes,
+  .site-nav {
+    display: none;
+  }
 }
 
 /* =========================================
@@ -1082,7 +1216,7 @@ ul {
   -webkit-backdrop-filter: blur(20px) saturate(200%);
 }
 
-#countdownStrip.is-sticky + * {
+#countdownStrip.is-sticky+* {
   margin-top: 80px;
 }
 

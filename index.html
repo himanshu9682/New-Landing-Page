@@ -18,17 +18,28 @@
 
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="brand" aria-label="The IoT Academy">
-        <span class="brand-logo">THE IOT ACADEMY</span>
-        <span class="brand-sub">Empowering Tech Careers</span>
-      </a>
-      <div class="nav-title">Advanced AI &amp; Machine Learning Program</div>
-      <a href="#registerForm"><button class="btn btn-outline nav-cta" type="button">Register Now</button></a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+  <!-- Header / Navbar -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <div class="logo-cluster">
+        <div class="logo">
+          <img src="https://www.theiotacademy.co/assets/dit/images/navbar/logo.svg" alt="The IoT Academy"
+            style="height:60px;width:auto;" />
+        </div>
+        <div class="forbes-divider">
+          <img src="https://www.theiotacademy.co/assets/dit/images/navbar/forbes01.svg" alt="Forbes"
+            style="height:60px;width:auto;" />
+        </div>
+        <div class="forbes">
+          <img src="https://www.theiotacademy.co/assets/dit/images/navbar/forbes02.svg" alt="Forbes India"
+            style="height:35px;width:auto;" />
+          <div class="visionary">Visionary Companies</div>
+          <div class="rank">Rank #2</div>
+        </div>
+      </div>
+
+      <button class="login-btn" onclick="document.getElementById('registerForm').scrollIntoView({behavior:'smooth'})">
+        Register Now!
       </button>
     </div>
   </header>
@@ -420,6 +431,18 @@
   </button>
 
   <script src="js/script.js"></script>
+  <script>
+    // Programs dropdown
+    const pw = document.getElementById('programsWrap');
+    const pb = document.getElementById('programsBtn');
+    pb.addEventListener('click', (e) => { e.stopPropagation(); pw.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!pw.contains(e.target)) pw.classList.remove('open'); });
+    // Pause marquee on hover
+    const mt = document.querySelector('.marquee-track');
+    const mq = document.querySelector('.marquee');
+    mq.addEventListener('mouseenter', () => mt.style.animationPlayState = 'paused');
+    mq.addEventListener('mouseleave', () => mt.style.animationPlayState = 'running');
+  </script>
 </body>
 
 </html>
